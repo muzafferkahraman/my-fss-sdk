@@ -1,8 +1,11 @@
 # my-fss-sdk
 
 I set out to simplify the API coding process for FSS. FSS is Nokia Fabric Services System, an intent-based NetOps toolkit that lets us automate our data center network operations.<br>
+
 This **project is still ongoing** and I'm **adding new APIs whenever I find the opportunity**<br>
+
 Instead of dealing with a more comprehensive API using the requests library, I aimed to abstract the process into concise and understandable methods <br>
+
 ie to get a list of regions, we first need to get an Authentication token: <br>
 
 > headers={'Content-Type': 'application/json'} <br>
