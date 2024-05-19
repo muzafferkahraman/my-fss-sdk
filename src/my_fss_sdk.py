@@ -1,8 +1,6 @@
 import requests
 import urllib3
 
-
-
 class FSS():
 
     def __init__(self,host,username,password): # code runs when the instance created
@@ -36,21 +34,14 @@ class FSS():
     
     def get_intents(self, name=None):
       
-      token=self.get_token()
-      
+      token=self.get_token()    
       headers={'Authorization':'Bearer {}'.format(token)}
       result = requests.get(self.host+'/rest/intentmgr/api/v1/intents', headers=headers,verify=False).json()
-      
-      
-      if name:
-        
+      if name:  
         item = None
         item_id = None  # Initialize item_id to avoid UnboundLocalError
         for item in result:
-          
           if item['fabric'][0]['name'] == name:
-              
-            
             item_id=item["uuid"]
             break
         if item and item_id:
